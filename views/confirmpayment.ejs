@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eLearning Empire</title>
-    <link rel="stylesheet" href="contactusstyles.css">
+    <link rel="stylesheet" href="confirmpaymentstyles.css">
     <link rel="icon" type="image/icon" href="favicon.png">
 </head>
 <body>
@@ -40,45 +40,50 @@
     <!-- Open Sidebar Button -->
     <span style="font-size:30px;cursor:pointer; position: absolute; top: 20px; left: 20px;" onclick="openNav()">&#9776;</span>
 
-    <div class="contact-container">
-        <div class="form-section">
-            <form class="form">
-                <h2>Contact Us</h2>
-                <p>Reach out to us for any inquiries, support, or feedback; we're here to assist you!</p>
-                <!-- Form contents here -->
-                <div class="flex">
-                    
-                    <label>
-                        <input required="" placeholder="" type="text" class="input">
-                        <span>First Name</span>
-                    </label>
-                    <label>
-                        <input required="" placeholder="" type="text" class="input">
-                        <span>Last Name</span>
-                    </label>
-                </div>  
-                <label>
-                    <input required="" placeholder="" type="email" class="input">
-                    <span>Email</span>
-                </label> 
-                <label>
-                    <input required="" type="tel" placeholder="" class="input">
-                    <span>Contact Number</span>
-                </label>
-                <label>
-                    <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-                    <span>Message</span>
-                </label>
-                <button class="fancy" href="#">
-                    <span class="top-key"></span>
-                    <span class="text">Submit</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </button>
-            </form>
-        </div>
-        <div class="image-section">
-            <img src="contactus.jpg" alt="Contact Us Image">
+    <div class="payment-container">
+        <div class="payment2-container">
+            <h2>Payment Modes</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion('qr-payment')">
+                        Pay With e-Sewa
+                    </button>
+                    <div id="qr-payment" class="accordion-content">
+                        <p>Pay Using e-Sewa</p>
+                        <p>You can pay directly through e-Sewa</p>
+                        <div class="image-container">
+                            <img src="qr2.jpg" alt="QR Code" class="centered-image">
+                        </div>
+                        <button class="order-button">Place Order →</button>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion('razorpay-payment')">
+                        Pay with Khalti
+                    </button>
+                    <div id="razorpay-payment" class="accordion-content">
+                        <p>Pay Using Khalti</p>
+                        <p>Secure payment using Khalti</p>
+                        <div class="image-container">
+                            <img src="qr2.jpg" alt="QR Code" class="centered-image">
+                        </div>
+                        <button class="order-button">Place Order →</button>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion('fonepay-payment')">
+                        Pay with fonepay
+                    </button>
+                    <div id="fonepay-payment" class="accordion-content">
+                        <p>Pay Using FonePay</p>
+                        <p>Secure payment using FonePay</p>
+                        <div class="image-container">
+                            <img src="qr2.jpg" alt="QR Code" class="centered-image">
+                        </div>
+                        <button class="order-button">Place Order →</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -228,6 +233,19 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
+    function toggleAccordion(contentId) {
+    const content = document.getElementById(contentId);
+    const isVisible = content.style.display === "block";
+    
+    // Hide all accordion content
+    document.querySelectorAll('.accordion-content').forEach(item => {
+        item.style.display = 'none';
+    });
+    
+    // Toggle the clicked content
+    content.style.display = isVisible ? "none" : "block";
+}
+    
 </script>
 
 </body>

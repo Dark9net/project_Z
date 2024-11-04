@@ -128,6 +128,7 @@ body {
     margin-bottom: 5px;
 }
 
+
 footer {
     background-color: #f8f8f8;
     padding: 20px;
@@ -517,63 +518,66 @@ h1 {
 }
 
 /* Flex container for all cards */
-.package-category-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: nowrap; /* Maintain row layout on large screens */
-    overflow-x: auto; /* Allow horizontal scroll if screen is too small */
-    padding: 0 10px;
+/* Container Styles */
+.package-hover-container {
+    text-align: center;
+    padding: 20px;
 }
 
-/* Styling for each card */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Card Container Styles */
+.package-category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .card {
-    width: 220px;
-    height: 280px;
-    background: #07182E;
-    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+    padding: 20px;
+    width: 250px;
+    height: fit-content;
+    gap: 30px;
+    text-align: center;
+}
+
+/* Centering h2 and Left-Aligning p Tags */
+.card h2 {
+    margin: 0 0 15px 0; /* Space below the h2 */
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.card p {
+    text-align: left;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #555;
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+.card p::before {
+    content: "✓";
+    color: #0d34e2; 
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #0d34e2;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    border-radius: 20px;
-    flex-shrink: 0; /* Prevent shrinking on smaller screens */
-}
-
-/* Card title styling */
-.card h2 {
-    z-index: 1;
-    margin-bottom: auto;
-    color: white;
-    font-size: 1.3em;
-}
-
-/* Background animation */
-.card::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
-    height: 130%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
-}
-
-@keyframes rotBGimg {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.card::after {
-    content: '';
-    position: absolute;
-    background: #07182E;
-    inset: 5px;
-    border-radius: 15px;
+    font-size: 0.8em;
 }
 
 /* Responsive adjustments */
@@ -794,3 +798,87 @@ button {
     box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
     transform: translate(0.1em, 0.1em);
   }
+  
+.tertiary-container {
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 20px; */
+    text-align: center;
+}
+.tertiary-container h1{
+    margin-top: 40px;
+}
+
+/* Third Package Container */
+.third-package-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Package Box */
+.package-box3 {
+    flex: 1;
+    margin-left: 100px;
+}
+
+/* Image Styling */
+.package-image2 {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Content Styling */
+.content2 {
+    flex: 2; /* Allow the text container to grow more */
+    padding-left: 20px; /* Space between image and text */
+    text-align: left; /* Left align the text */
+}
+
+.content2 h2{
+    text-align: center;
+}
+.content2 p{
+    margin-right: 80px;
+    font-weight: 100;
+    margin-left: 30px;
+    gap: 5px;
+    color: #090909;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .third-package-container {
+        flex-direction: column; /* Stack image and content on smaller screens */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .package-box3 {
+        margin-left: 0; /* Remove left margin for smaller screens */
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
+    .content2 {
+        padding-left: 0;
+        width: 90%; /* Adjust width for smaller screens */
+        margin-top: 20px; /* Add space between image and text content */
+    }
+
+    .content2 p {
+        margin: 5px 20px; /* Reduce horizontal margins */
+        font-size: 0.95em; /* Slightly smaller font for smaller screens */
+        text-align: center;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .content2 p {
+        margin: 5px 10px; /* Further reduce margins on very small screens */
+        font-size: 0.9em;
+        text-align: center;
+    }
+}

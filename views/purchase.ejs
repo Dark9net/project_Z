@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eLearning Empire</title>
-    <link rel="stylesheet" href="contactusstyles.css">
+    <link rel="stylesheet" href="purchasestyles.css">
     <link rel="icon" type="image/icon" href="favicon.png">
 </head>
 <body>
@@ -42,43 +42,78 @@
 
     <div class="contact-container">
         <div class="form-section">
-            <form class="form">
-                <h2>Contact Us</h2>
-                <p>Reach out to us for any inquiries, support, or feedback; we're here to assist you!</p>
-                <!-- Form contents here -->
+            <h1>Billing Details</h1>
+            <p>"Choose Your Package and Proceed to Payment"</p>
+            <form class="form" onsubmit="return validateForm()">
+                
                 <div class="flex">
-                    
                     <label>
-                        <input required="" placeholder="" type="text" class="input">
-                        <span>First Name</span>
+                        <input class="input" type="text" placeholder="" required="">
+                        <span>First name</span>
                     </label>
+
                     <label>
-                        <input required="" placeholder="" type="text" class="input">
-                        <span>Last Name</span>
+                        <input class="input" type="text" placeholder="" required="">
+                        <span>Last name</span>
                     </label>
                 </div>  
+                <div class="flex">
+                    <label>
+                        <input class="input" type="text" placeholder="" required="">
+                        <span>Address</span>
+                    </label>
+
+                    <label>
+                        <input class="input" type="text" placeholder="" pattern="\d{5}" required="">
+                        <span>Zip Code</span>
+                    </label>
+                </div> 
+                
+                        
                 <label>
-                    <input required="" placeholder="" type="email" class="input">
+                    <input class="input" type="email" placeholder="" required="">
                     <span>Email</span>
                 </label> 
+                    
                 <label>
-                    <input required="" type="tel" placeholder="" class="input">
-                    <span>Contact Number</span>
+                    <input class="input" placeholder="" type="tel" required="">
+                    <span>Contact number</span>
+                </label>
+                    <select class="input" id="options" name="Choose Package" required>
+                        <option value="" disabled selected>Choose Package</option>
+                        <option value="bronze">Bronze Package</option>
+                        <option value="bronze">Silver Package</option>
+                        <option value="bronze">Gold Package</option>
+                        <option value="bronze">Platinum Package</option>
+                        <option value="bronze">Diamond Package</option>
+                    </select>
+                <label>
+                    <input class="input" placeholder="" type="text" required="">
+                    <span>Coupan Code</span>
                 </label>
                 <label>
-                    <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-                    <span>Message</span>
+                    <input class="input" placeholder="" type="text" required="">
+                    <span>Password</span>
                 </label>
-                <button class="fancy" href="#">
-                    <span class="top-key"></span>
-                    <span class="text">Submit</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
+                <label class="container">
+                    <input type="checkbox" id="termsCheckbox">
+                    <div class="checkmark"></div>
+                    <p>I Agree the Privacy Policy and Terms & Conditions</p>
+                
+                </label>
+
+
+                
+                
+                <button href="#" class="fancy">
+                <span class="top-key"></span>
+                <span class="text">Proceed to Payment</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
                 </button>
+
+                
             </form>
-        </div>
-        <div class="image-section">
-            <img src="contactus.jpg" alt="Contact Us Image">
         </div>
     </div>
     
@@ -227,6 +262,17 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
+    }
+    function validateForm() {
+        const checkbox = document.getElementById("termsCheckbox");
+        
+        // Check if the checkbox is checked
+        if (!checkbox.checked) {
+            alert("Please agree to the Privacy Policy and Terms & Conditions before proceeding.");
+            return false;
+        }
+        
+        return true;
     }
 </script>
 

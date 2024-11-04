@@ -99,6 +99,20 @@ app.get('/contactus', (req, res) => {
   res.render('contactus')
 })
 
+// side drawer purchase course option
+app.get('/purchase', (req, res) => {
+  res.render('purchase')
+})
+
+// here is confirm payment page rendering
+app.get('/confirmpayment', (req, res) => {
+  res.render('confirmpayment')
+})
+
+// final payment photo upload gateway here
+app.get('/final_payment', (req, res) => {
+  res.render('final_payment')
+})
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);

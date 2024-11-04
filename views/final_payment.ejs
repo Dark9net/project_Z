@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eLearning Empire</title>
-    <link rel="stylesheet" href="contactusstyles.css">
+    <link rel="stylesheet" href="finalpaymentstyles.css">
     <link rel="icon" type="image/icon" href="favicon.png">
 </head>
 <body>
@@ -40,45 +40,31 @@
     <!-- Open Sidebar Button -->
     <span style="font-size:30px;cursor:pointer; position: absolute; top: 20px; left: 20px;" onclick="openNav()">&#9776;</span>
 
-    <div class="contact-container">
-        <div class="form-section">
-            <form class="form">
-                <h2>Contact Us</h2>
-                <p>Reach out to us for any inquiries, support, or feedback; we're here to assist you!</p>
-                <!-- Form contents here -->
-                <div class="flex">
-                    
-                    <label>
-                        <input required="" placeholder="" type="text" class="input">
-                        <span>First Name</span>
-                    </label>
-                    <label>
-                        <input required="" placeholder="" type="text" class="input">
-                        <span>Last Name</span>
-                    </label>
-                </div>  
-                <label>
-                    <input required="" placeholder="" type="email" class="input">
-                    <span>Email</span>
-                </label> 
-                <label>
-                    <input required="" type="tel" placeholder="" class="input">
-                    <span>Contact Number</span>
-                </label>
-                <label>
-                    <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-                    <span>Message</span>
-                </label>
-                <button class="fancy" href="#">
-                    <span class="top-key"></span>
-                    <span class="text">Submit</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </button>
+    <div class="payment-container">
+        <div class="payment2-container">
+            <h2>Confirm Your Payment</h2>
+            <p>Upload your Payment Screenshot</p>
+            <form class="file-upload-form">
+            <label for="file" class="file-upload-label">
+                <div class="file-upload-design">
+                <svg viewBox="0 0 640 512" height="1em">
+                    <path
+                    d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                    ></path>
+                </svg>
+                <p>Drag and Drop</p>
+                <p>or</p>
+                <span class="browse-button">Browse file</span>
+                </div>
+                <input id="file" type="file" />
+            </label>
             </form>
-        </div>
-        <div class="image-section">
-            <img src="contactus.jpg" alt="Contact Us Image">
+            <p>Your transaction ID</p>
+            <input type="text" name="transaction" id="transaction" placeholder="Transaction ID">
+            <p>Note: Check Your E-mail after you confirm your payment</p>
+            <button class="send-button">Send</button>
+            
+
         </div>
     </div>
     
@@ -228,6 +214,8 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
+    
+    
 </script>
 
 </body>
